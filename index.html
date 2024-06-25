@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="welcome">
+      <div id="welcome_inner">
+        <div id="intro">
+          <svg id="timerCircle" width="300" height="300">
+            <circle id="loader" cx="150" cy="150" r="120" />
+          </svg>
+          <div id="timer_and_logo">
+            <span id="timer">0</span>
+            <div id="introLogo">
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 64 64"
+                fill="#B7AB98"
+                class="svg"
+                viewbox_="0 0 NaN NaN"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M53.4123 56.0001C59.9131 50.12 64 41.602 64 32.1258C64 14.3832 49.6731 0 32 0C14.3269 0 0 14.3832 0 32.1258C0 41.2108 3.75642 49.4151 9.79504 55.2585L21.5957 13.0511L27.5053 25.8028H31.5H35.4947L41.4043 13.0511L53.4123 56.0001Z"
+                  fill="inherit"
+                ></path>
+                <ellipse
+                  cx="26.1333"
+                  cy="37.4132"
+                  rx="2.13333"
+                  ry="2.14172"
+                  fill="#B7AB98"
+                ></ellipse>
+                <ellipse
+                  cx="37.1333"
+                  cy="37.4132"
+                  rx="2.13333"
+                  ry="2.14172"
+                  fill="#B7AB98"
+                ></ellipse>
+              </svg>
+            </div>
+          </div>
+
+          <button id="startBtn">Start</button>
+        </div>
+      </div>
+    </section>
+    <header>
+      <div id="logo">
+        <div id="logo_overlay"></div>
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 64 64"
+          fill="#B7AB98"
+          class="svg"
+          viewbox_="0 0 NaN NaN"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M53.4123 56.0001C59.9131 50.12 64 41.602 64 32.1258C64 14.3832 49.6731 0 32 0C14.3269 0 0 14.3832 0 32.1258C0 41.2108 3.75642 49.4151 9.79504 55.2585L21.5957 13.0511L27.5053 25.8028H31.5H35.4947L41.4043 13.0511L53.4123 56.0001Z"
+            fill="inherit"
+          ></path>
+          <ellipse
+            cx="26.1333"
+            cy="37.4132"
+            rx="2.13333"
+            ry="2.14172"
+            fill="#B7AB98"
+          ></ellipse>
+          <ellipse
+            cx="37.1333"
+            cy="37.4132"
+            rx="2.13333"
+            ry="2.14172"
+            fill="#B7AB98"
+          ></ellipse>
+        </svg>
+      </div>
+      <div id="navigators">
+        <ul>
+          <li id="about">About</li>
+          <li id="work">Work</li>
+          <li id="contact">Contact</li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="page1">
+        <div id="page1_bg">
+          <video muted loop src="./assets/videos/hero.mp4"></video>
+        </div>
+        <div id="page1_content">
+          <div id="page1_content_visible">
+            <div id="page1_content_visible_overlay"></div>
+            <h4>Raman Jadaun</h4>
+            <div>
+              <h1 id="making">
+                <span>m</span>
+                <span>a</span>
+                <span>k</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+              </h1>
+            </div>
+            <div class="orng">
+              <h1 id="good">
+                <span>g</span>
+                <span>o</span>
+                <span>o</span>
+                <span>d</span>
+              </h1>
+            </div>
+            <div class="orng">
+              <h1 id="since">
+                <span>s</span>
+                <span>h</span>
+                <span>i</span>
+                <span>t</span>
+              </h1>
+            </div>
+            <div>
+              <h1 id="shit">
+                <span>s</span>
+                <span>i</span>
+                <span>n</span>
+                <span>c</span>
+                <span>e</span>
+              </h1>
+            </div>
+            <div>
+              <h1 id="year">
+                <span>2</span>
+                <span>0</span>
+                <span>2</span>
+                <span>3</span>
+              </h1>
+            </div>
+          </div>
+          <div id="page1_content_hided">
+            <h4>Raman Jadaun</h4>
+            <div>
+              <h1>Hiding</h1>
+            </div>
+            <div>
+              <h1>this</h1>
+            </div>
+            <div>
+              <h1>shit</h1>
+            </div>
+            <div>
+              <h1>since</h1>
+            </div>
+            <div>
+              <h1>2023</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="page2">
+        <div id="page2_content">
+          <div id="page2_visible_about">
+            <div id="page2_visible_about_overlay"></div>
+            <h4>about me</h4>
+            <div>
+              <div></div>
+              I'm a &nbsp;<strong class="orng"> selectively </strong> &nbsp;
+              <strong class="orng"> skilled </strong> &nbsp; MERN
+            </div>
+            <div>
+              <div></div>
+              stack developer with a strong
+            </div>
+            <div>
+              <div></div>
+              focus on delivering high-quality &
+            </div>
+            <div>
+              <div></div>
+              impactfull web applications.
+            </div>
+          </div>
+          <div id="page2_hided_about">
+            <h4>About me</h4>
+            <div>
+              I'm a <strong>React</strong> and
+              <strong>GSAP</strong> designer—boasting
+            </div>
+            <div>talents that A.I. taken over (yet). Crafting</div>
+            <div>dynamic and engaging experiences,as</div>
+            <div>long as the paycheck matches the effort.</div>
+          </div>
+        </div>
+      </section>
+      <section id="page3">
+        <h2>what i do</h2>
+        <div id="page3_content">
+          <div class="page3_inner">
+            <div class="page3_visible_content">
+              <div class="page3_text_overlay_div"></div>
+              <h1>
+                <div></div>
+                Innovative
+              </h1>
+            </div>
+            <div class="page3_hidden_content">
+              <h1>Innovative</h1>
+              <span
+                >Innovation: because we can't spell 'revolutionary' without
+                'evolutionary'... and a bit of 'in'.</span
+              >
+            </div>
+          </div>
+          <div class="page3_inner">
+            <div class="page3_visible_content">
+              <div class="page3_text_overlay_div"></div>
+              <h1>
+                <div></div>
+                Full-stack
+              </h1>
+            </div>
+            <div class="page3_hidden_content">
+              <h1>Full-stack</h1>
+              <span
+                >Reacting to bugs faster than my morning coffee cools
+                down.</span
+              >
+            </div>
+          </div>
+          <div class="page3_inner">
+            <div class="page3_visible_content">
+              <div class="page3_text_overlay_div"></div>
+              <h1>
+                <div></div>
+                Animation
+              </h1>
+            </div>
+            <div class="page3_hidden_content">
+              <h1>Animation</h1>
+              <span
+                >Animating with GSAP: Making websites dance like no one's
+                watching.</span
+              >
+            </div>
+          </div>
+          <div class="page3_inner">
+            <div class="page3_visible_content">
+              <div class="page3_text_overlay_div"></div>
+              <h1>
+                <div></div>
+                React
+              </h1>
+            </div>
+            <div class="page3_hidden_content">
+              <h1>React</h1>
+              <span
+                >Mastering MERN: Turning coffee into code and code into
+                coffee.</span
+              >
+            </div>
+          </div>
+          <div class="page3_inner">
+            <div class="page3_visible_content">
+              <div class="page3_text_overlay_div"></div>
+              <h1>
+                <div></div>
+                Mobile
+              </h1>
+            </div>
+            <div class="page3_hidden_content">
+              <h1>Mobile</h1>
+              <span
+                >React Native: Because making apps that feel native is like
+                baking cookies that taste homemade.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="page4">
+        <div id="page4_content">
+          <div id="page4_video_container">
+            <video autoplay loop muted src="./assets/videos/reel.mp4"></video>
+          </div>
+        </div>
+      </section>
+      <section id="page5">
+        <div id="page5_content">
+          <div id="page5_inner_content1">
+            <div id="page5_inner_content1_visible">
+              <div class="page5_inner_content_overlay"></div>
+              <h1>
+                <div>
+                  <div class="page5_content1_text_overlay"></div>
+                  <h1>"</h1>
+                  He's the best among
+                </div>
+                <div>
+                  <div class="page5_content1_text_overlay"></div>
+                  &nbsp;all of his friends.
+                </div>
+                <div>
+                  <div class="page5_content1_text_overlay"></div>
+                  &nbsp;Probably he's gonna
+                </div>
+                <div>
+                  <div class="page5_content1_text_overlay"></div>
+                  &nbsp;get _ _ _.
+                </div>
+              </h1>
+              <div>
+                <h4>Hitesh Choudhary</h4>
+                <h5>Founder</h5>
+                <h5>Chai Aur Code</h5>
+              </div>
+            </div>
+            <div id="page5_inner_content1_hidden">
+              <h1>
+                <div>
+                  <h1>"</h1>
+                  I didn't said that
+                </div>
+                <div>&nbsp;He used ChatGpt for</div>
+                <div>&nbsp;this But he's gonna</div>
+                <div>&nbsp;get _ _ _.</div>
+              </h1>
+              <div>
+                <h4>Hitesh Choudhary</h4>
+                <h5>Founder</h5>
+                <h5>Chai Aur Code</h5>
+              </div>
+            </div>
+          </div>
+          <div id="page5_inner_content2">
+            <div id="page5_inner_content2_visible">
+              <div class="page5_inner_content_overlay"></div>
+              <h1>
+                <div>
+                  <div class="page5_content2_text_overlay"></div>
+                  <h1>"</h1>
+                  He's the best among
+                </div>
+                <div>
+                  <div class="page5_content2_text_overlay"></div>
+                  &nbsp;all of his friends.
+                </div>
+                <div>
+                  <div class="page5_content2_text_overlay"></div>
+                  &nbsp;Probably he's gonna
+                </div>
+                <div>
+                  <div class="page5_content2_text_overlay"></div>
+                  &nbsp;get _ _ _.
+                </div>
+              </h1>
+              <div>
+                <h4>Hitesh Choudhary</h4>
+                <h5>Founder</h5>
+                <h5>Chai Aur Code</h5>
+              </div>
+            </div>
+            <div id="page5_inner_content2_hidden">
+              <h1>
+                <div>
+                  <h1>"</h1>
+                  I didn't said that
+                </div>
+                <div>&nbsp;He used ChatGpt for</div>
+                <div>&nbsp;this But he's gonna</div>
+                <div>&nbsp;get _ _ _.</div>
+              </h1>
+              <div>
+                <h4>Hitesh Choudhary</h4>
+                <h5>Founder</h5>
+                <h5>Chai Aur Code</h5>
+              </div>
+            </div>
+          </div>
+          <div id="page5_inner_content3">
+            <div id="page5_inner_content3_visible">
+              <div class="page5_inner_content_overlay"></div>
+              <h1>
+                <div>
+                  <div class="page5_content3_text_overlay"></div>
+                  <h1>"</h1>
+                  He's the best among
+                </div>
+                <div>
+                  <div class="page5_content3_text_overlay"></div>
+                  &nbsp;all of his friends.
+                </div>
+                <div>
+                  <div class="page5_content3_text_overlay"></div>
+                  &nbsp;Probably he's gonna
+                </div>
+                <div>
+                  <div class="page5_content3_text_overlay"></div>
+                  &nbsp;get _ _ _.
+                </div>
+              </h1>
+              <div>
+                <h4>Hitesh Choudhary</h4>
+                <h5>Founder</h5>
+                <h5>Chai Aur Code</h5>
+              </div>
+            </div>
+            <div id="page5_inner_content3_hidden">
+              <h1>
+                <div>
+                  <h1>"</h1>
+                  I didn't said that
+                </div>
+                <div>&nbsp;He used ChatGpt for</div>
+                <div>&nbsp;this But he's gonna</div>
+                <div>&nbsp;get _ _ _.</div>
+              </h1>
+              <div>
+                <h4>Hitesh Choudhary</h4>
+                <h5>Founder</h5>
+                <h5>Chai Aur Code</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div id="socials">
+        <div>
+          <div class="social_overlay"></div>
+          <svg
+            style="rotate: -45deg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M86.6 64l85.2 85.2C194.5 121.7 208 86.4 208 48c0-14.7-2-28.9-5.7-42.4C158.6 15 119 35.5 86.6 64zM64 86.6C35.5 119 15 158.6 5.6 202.3C19.1 206 33.3 208 48 208c38.4 0 73.7-13.5 101.3-36.1L64 86.6zM256 0c-7.3 0-14.6 .3-21.8 .9C238 16 240 31.8 240 48c0 47.3-17.1 90.5-45.4 124L256 233.4 425.4 64C380.2 24.2 320.9 0 256 0zM48 240c-16.2 0-32-2-47.1-5.8C.3 241.4 0 248.7 0 256c0 64.9 24.2 124.2 64 169.4L233.4 256 172 194.6C138.5 222.9 95.3 240 48 240zm463.1 37.8c.6-7.2 .9-14.5 .9-21.8c0-64.9-24.2-124.2-64-169.4L278.6 256 340 317.4c33.4-28.3 76.7-45.4 124-45.4c16.2 0 32 2 47.1 5.8zm-4.7 31.9C492.9 306 478.7 304 464 304c-38.4 0-73.7 13.5-101.3 36.1L448 425.4c28.5-32.3 49.1-71.9 58.4-115.7zM340.1 362.7C317.5 390.3 304 425.6 304 464c0 14.7 2 28.9 5.7 42.4C353.4 497 393 476.5 425.4 448l-85.2-85.2zM317.4 340L256 278.6 86.6 448c45.1 39.8 104.4 64 169.4 64c7.3 0 14.6-.3 21.8-.9C274 496 272 480.2 272 464c0-47.3 17.1-90.5 45.4-124z"
+            />
+          </svg>
+        </div>
+        <div>
+          <div class="social_overlay"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+              d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z"
+            />
+          </svg>
+        </div>
+        <div>
+          <div class="social_overlay"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path
+              d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
+            />
+          </svg>
+        </div>
+        <div>
+          <div class="social_overlay"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+              d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div id="sound_div">
+        <span>Sound </span>
+        <div><span>On</span> <span>Off</span></div>
+      </div>
+    </footer>
+    <div id="mouse_follower">
+      <div>Play <br />Reel</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

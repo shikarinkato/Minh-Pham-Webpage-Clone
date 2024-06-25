@@ -1,0 +1,972 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow: hidden;
+}
+
+#main {
+  visibility: hidden;
+  background: #000;
+  height: 100%;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+#welcome {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: #000;
+  z-index: 99;
+  font-family: "AvantGarde BK BT";
+}
+
+#welcome_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+
+#intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: 400px;
+  width: 400px;
+  > button {
+    position: absolute;
+    visibility: hidden;
+    font-size: 1.3vmax;
+    text-transform: uppercase;
+    background: transparent;
+    color: #b7ab98;
+    padding: 0.7rem 3.7rem;
+    border-radius: 99px;
+    border: 1px solid #b7ab98;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    bottom: -1.5rem;
+    scale: 1.1;
+  }
+  > button:hover {
+    color: #000;
+    background: #b7ab98;
+  }
+}
+
+#timer_and_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+#timerCircle {
+  background: #000;
+  fill: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  rotate: -90deg;
+}
+#loader {
+  stroke-width: 1px;
+}
+
+#timer {
+  font-size: 1vmax;
+  color: #b7ab98;
+  position: absolute;
+  top: -7vmin;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#introLogo {
+  height: 65px;
+  width: 65px;
+  scale: 1.1;
+}
+
+#mouse_follower {
+  /* height: 35px; */
+  /* width: 35px; */
+  padding: 1.3rem 1.3rem;
+  background: #eb5939;
+  border-radius: 999px;
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  font-family: "AvantGarde BK BT";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0vmin;
+  }
+}
+
+header {
+  display: none;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 0rem;
+  padding-left: 3rem;
+  padding-right: 4rem;
+  font-family: "AvantGarde BK BT";
+  width: 100%;
+  position: absolute;
+  z-index: 39;
+  color: #b7ab98;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  border-radius: 999px;
+  z-index: 5;
+  height: 60px;
+  width: 60px;
+}
+
+#logo_overlay {
+  position: absolute;
+  background: red;
+  z-index: 9;
+  height: 60px;
+  width: 60px;
+  border: 99px;
+  background: transparent;
+}
+
+#navigators {
+  position: fixed;
+  right: 4rem;
+  > ul {
+    text-align: end;
+    text-transform: uppercase;
+    color: #b7ab98;
+    list-style: none;
+    > li:nth-child(1) {
+      opacity: 1;
+    }
+    > li {
+      font-size: 1rem;
+      color: #b7ab98;
+      margin: 0.5rem 0rem;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+    > li:hover {
+      opacity: 1;
+    }
+  }
+}
+
+footer {
+  display: none;
+  justify-content: space-between;
+  align-items: end;
+  position: relative;
+  width: 100%;
+  z-index: 39;
+  padding: 3rem;
+  bottom: 0;
+  font-family: "AvantGarde BK BT";
+  color: #b7ab98;
+}
+
+#sound_div {
+  display: flex;
+  margin-bottom: 5rem;
+  rotate: -90deg;
+  cursor: pointer;
+  position: fixed;
+  z-index: 39;
+  bottom: 2rem;
+  right: 3rem;
+  > span {
+    opacity: 0.6;
+  }
+  > span:hover {
+    opacity: 1;
+  }
+  > div {
+    padding: 0rem 0.5rem;
+    overflow: hidden;
+    height: 20px;
+    width: 30px;
+    > span {
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+  }
+}
+
+#sound_div:hover div span {
+  transform: translate(0px, -17px);
+}
+
+#socials {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2rem;
+  position: fixed;
+  z-index: 39;
+  left: 4rem;
+  bottom: 5rem;
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    position: relative;
+    > svg {
+      fill: #b7ab98;
+      height: 20px;
+      width: 20px;
+      mix-blend-mode: color-dodge;
+    }
+  }
+}
+
+.social_overlay {
+  position: absolute;
+  z-index: 39;
+  height: 45px;
+  width: 45px;
+  border-radius: 99px;
+  background: transparent;
+}
+
+#page1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  color: #b7ab98;
+  > h1 {
+    font-size: 5vw;
+    font-family: "AvantGarde BK BT";
+  }
+}
+
+#page1_bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 19;
+  left: 0;
+  top: 0;
+  > video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+#page1_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 99;
+  width: 80%;
+  height: 100%;
+}
+
+#page1_content_visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  line-height: 15vmin;
+  font-family: "AvantGarde BK BT";
+  > h4 {
+    overflow: hidden;
+    letter-spacing: 1vmin;
+  }
+  > div {
+    font-size: 10vmin;
+    display: flex;
+    overflow: hidden;
+    > h1 {
+      overflow: hidden;
+      padding-right: 1rem;
+      letter-spacing: -2vmin;
+      > span {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+#page1_content_visible_overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  line-height: 7vmax;
+  font-family: "AvantGarde BK BT";
+  position: absolute;
+  z-index: 59;
+  background: transparent;
+  height: 90%;
+  width: 45%;
+}
+
+#page1_content_hided {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  line-height: 15vmin;
+  font-family: "AvantGarde BK BT";
+  position: absolute;
+  color: #000;
+  background: #eb5939;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 49;
+  clip-path: circle(0px at 50% 50%);
+  transition: clip-path 0.2s ease;
+  > h4 {
+    letter-spacing: 1vmin;
+  }
+  > div {
+    overflow: hidden;
+    letter-spacing: 1vmin;
+    font-size: 10vmin;
+  }
+}
+
+.orng {
+  color: #eb5939;
+}
+
+#page2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+  background: #000;
+  font-family: "AvantGarde BK BT", sans-serif;
+}
+
+#page2_content {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  padding: 2rem 7rem;
+  position: relative;
+  width: 80%;
+  height: 100%;
+  z-index: 69;
+  color: #b7ab98;
+  /* background: rebeccapurple; */
+}
+
+#page2_visible_about {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-size: 4vmax;
+  text-align: left;
+  /* background-color: #eb5939; */
+  > h4 {
+    text-align: star;
+    padding: 1rem 0rem;
+    letter-spacing: 3px;
+    font-size: 1.3vmax;
+    text-transform: uppercase;
+    font-weight: 200;
+  }
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #b7ab98;
+    height: 100%;
+    width: 100%; */
+    opacity: 1;
+    > div {
+      position: absolute;
+      background: #000;
+      opacity: 0.5;
+      width: 100%;
+      height: 72px;
+    }
+  }
+}
+
+#page2_visible_about_overlay {
+  position: absolute;
+  background: transparent;
+  z-index: 39;
+  height: 60%;
+  /* background: #b7ab98; */
+  width: 80%;
+  opacity: 0.5;
+}
+
+#page2_hided_about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 21;
+  width: 100%;
+  height: 100%;
+  background: #eb5939;
+  padding-bottom: 1rem;
+  clip-path: circle(0px at 50% 50%);
+  transition: clip-path 0.1s ease;
+  > h4 {
+    padding-left: 7rem;
+    letter-spacing: 3px;
+    font-size: 1.3vmax;
+    text-transform: uppercase;
+    font-weight: 200;
+    padding-bottom: 1rem;
+    color: #000;
+  }
+  > div {
+    padding-left: 7rem;
+    color: #000;
+    font-size: 3.5vw;
+  }
+}
+
+#page3 {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  padding: 4rem 0rem;
+  font-family: "AvantGarde BK BT";
+  > h2 {
+    padding-left: 15rem;
+    padding-bottom: 2rem;
+    font-size: 2vmin;
+    text-transform: uppercase;
+    color: #b7ab98;
+    letter-spacing: 5px;
+  }
+}
+
+#page3_content {
+  /* background: #eb5939; */
+  height: 100%;
+  width: 100%;
+  > div {
+    width: 100%;
+    color: #b7ab98;
+    position: relative;
+    background: #000;
+    z-index: 21;
+  }
+}
+
+.page3_inner::before {
+  position: absolute;
+  content: "";
+  height: 0.8px;
+  color: rgb(159, 152, 152);
+  background: rgb(140, 137, 137);
+  opacity: 0.3;
+  width: 100%;
+}
+
+.page3_inner::after {
+  position: absolute;
+  content: "";
+  height: 0.8px;
+  color: red;
+  background: rgb(147, 144, 144);
+  width: 100%;
+  opacity: 0.3;
+}
+
+.page3_visible_content {
+  padding-left: 15rem;
+  > h1 {
+    padding-top: 0.5rem;
+    line-height: 11vmin;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 15vmin;
+    position: relative;
+    > div {
+      display: inline-block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: transparent;
+      z-index: 19;
+      opacity: 0.3;
+    }
+  }
+}
+
+.page3_hidden_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 15rem;
+  width: 100%;
+  background: #eb5939;
+  position: absolute;
+  color: #000;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 15;
+  clip-path: polygon(100% 50%, 100% 50%, 0% 50%, 0% 50%);
+  transition: clip-path 0.3s ease-in-out;
+  > h1 {
+    text-transform: uppercase;
+    font-size: 15vmin;
+  }
+  > span {
+    width: 30%;
+  }
+}
+
+.page3_text_overlay_div {
+  position: absolute;
+  height: 100%;
+  background: #000;
+  z-index: 25;
+  width: 80%;
+  opacity: 0.4;
+}
+
+#page4 {
+  width: 100%;
+  height: 100vh;
+}
+
+#page4_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#page4_video_container {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  > video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+#page5 {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  font-family: "AvantGarde BK BT";
+}
+
+#page5_inner_content1 {
+  padding: 8rem 12rem;
+  color: #b7ab98;
+  position: relative;
+}
+
+.page5_inner_content_overlay {
+  background: transparent;
+  position: absolute;
+  /* opacity: 0.5; */
+  height: 100%;
+  width: 60%;
+  z-index: 39;
+}
+
+#page5_inner_content1_visible::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  top: -25px;
+  left: 0;
+  background: gray;
+  opacity: 0.5;
+}
+
+#page5_inner_content1_visible {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  row-gap: 5vmax;
+  > h1 {
+    color: #b7ab98;
+    font-size: 8vmin;
+    > div:nth-child(1) {
+      display: flex;
+      color: #b7ab98;
+      position: relative;
+      > h1 {
+        color: #eb5939;
+        font-size: 15vmin;
+        display: block;
+        line-height: 10vmin;
+      }
+    }
+    > div {
+      position: relative;
+    }
+  }
+  > div:nth-child(3) {
+    position: relative;
+    padding-left: 5vmin;
+    > h4 {
+      color: #ada8a0;
+    }
+    > h5 {
+      color: #787268;
+    }
+  }
+}
+
+#page5_inner_content1_hidden::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  top: -25px;
+  left: 0;
+  background: black;
+  opacity: 0.5;
+}
+
+.page5_content1_text_overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.6;
+  z-index: 29;
+}
+
+#page5_inner_content1_hidden {
+  padding: 8rem 12rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  row-gap: 5vmax;
+  background: #eb5939;
+  width: 70%;
+  z-index: 35;
+  /* opacity: 0.4; */
+  clip-path: circle(0px at 50% 50%);
+  transition: clip-path 0.3s ease;
+  > h1 {
+    color: #000;
+    font-size: 8vmin;
+    > div:nth-child(1) {
+      display: flex;
+      color: #000;
+      > h1 {
+        color: #b7ab98;
+        font-size: 15vmin;
+        display: block;
+        line-height: 10vmin;
+      }
+    }
+  }
+  > div {
+    padding-left: 5vmin;
+    > h4 {
+      color: #080808;
+    }
+    > h5 {
+      color: #151515;
+    }
+  }
+}
+
+#page5_inner_content2 {
+  padding: 0rem 12rem;
+  color: #b7ab98;
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+#page5_inner_content2_visible::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  top: -25px;
+  left: 0;
+  background: gray;
+  opacity: 0.5;
+}
+
+#page5_inner_content2_visible {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  row-gap: 5vmax;
+  > h1 {
+    color: #b7ab98;
+    font-size: 8vmin;
+    > div:nth-child(1) {
+      display: flex;
+      color: #b7ab98;
+      position: relative;
+      > h1 {
+        color: #eb5939;
+        font-size: 15vmin;
+        display: block;
+        line-height: 10vmin;
+      }
+    }
+    > div {
+      position: relative;
+    }
+  }
+  > div:nth-child(3) {
+    position: relative;
+    padding-left: 5vmin;
+    > h4 {
+      color: #ada8a0;
+    }
+    > h5 {
+      color: #787268;
+    }
+  }
+}
+
+.page5_content2_text_overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.6;
+  z-index: 29;
+}
+
+#page5_inner_content2_hidden::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  top: -25px;
+  left: 0;
+  background: gray;
+  opacity: 0.5;
+}
+
+#page5_inner_content2_hidden {
+  padding: 8rem 12rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: absolute;
+  top: -16vmin;
+  left: 0;
+  row-gap: 5vmax;
+  background: #eb5939;
+  width: 70%;
+  z-index: 35;
+  /* opacity: 0.4; */
+  clip-path: circle(0px at 50% 50%);
+  transition: clip-path 0.3s ease;
+  > h1 {
+    color: #000;
+    font-size: 8vmin;
+    > div:nth-child(1) {
+      display: flex;
+      color: #000;
+      > h1 {
+        color: #b7ab98;
+        font-size: 15vmin;
+        display: block;
+        line-height: 10vmin;
+      }
+    }
+  }
+  > div {
+    padding-left: 5vmin;
+    > h4 {
+      color: #080808;
+    }
+    > h5 {
+      color: #151515;
+    }
+  }
+}
+
+#page5_inner_content3 {
+  padding: 4rem 12rem;
+  color: #b7ab98;
+  position: relative;
+}
+
+#page5_inner_content3_visible::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  top: -25px;
+  left: 0;
+  background: gray;
+  opacity: 0.5;
+}
+
+#page5_inner_content3_visible {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  row-gap: 5vmax;
+  > h1 {
+    color: #b7ab98;
+    font-size: 8vmin;
+    > div:nth-child(1) {
+      display: flex;
+      color: #b7ab98;
+      position: relative;
+      > h1 {
+        color: #eb5939;
+        font-size: 15vmin;
+        display: block;
+        line-height: 10vmin;
+      }
+    }
+    > div {
+      position: relative;
+    }
+  }
+  > div:nth-child(3) {
+    position: relative;
+    padding-left: 5vmin;
+    > h4 {
+      color: #ada8a0;
+    }
+    > h5 {
+      color: #787268;
+    }
+  }
+}
+
+.page5_content3_text_overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.6;
+  z-index: 29;
+}
+
+#page5_inner_content3_hidden::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  top: -25px;
+  left: 0;
+  background: black;
+  opacity: 0.5;
+}
+
+#page5_inner_content3_hidden {
+  padding: 8rem 12rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: absolute;
+  top: -8vmin;
+  left: 0;
+  row-gap: 5vmax;
+  background: #eb5939;
+  width: 70%;
+  z-index: 35;
+  /* opacity: 0.4; */
+  clip-path: circle(0px at 50% 50%);
+  transition: clip-path 0.3s ease;
+  > h1 {
+    color: #000;
+    font-size: 8vmin;
+    > div:nth-child(1) {
+      display: flex;
+      color: #000;
+      > h1 {
+        color: #b7ab98;
+        font-size: 15vmin;
+        display: block;
+        line-height: 10vmin;
+      }
+    }
+  }
+  > div {
+    padding-left: 5vmin;
+    > h4 {
+      color: #080808;
+    }
+    > h5 {
+      color: #151515;
+    }
+  }
+}
